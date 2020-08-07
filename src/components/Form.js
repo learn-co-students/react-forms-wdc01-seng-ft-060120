@@ -6,6 +6,12 @@ class Form extends React.Component {
     lastName: "Henry"
   }
 
+  handleSubmit = event => {
+    event.preventDefault()
+    let formData = { firstName: this.state.firstName, lastName: this.state.lastName }
+    this.sendFormDataSomewhere(formData)
+  }
+
   handleFirstNameChange = event => {
     this.setState({
       firstName: event.target.value
